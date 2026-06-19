@@ -92,18 +92,33 @@ export default function Header() {
           className={styles.menuToggle}
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
+          aria-label={menuOpen ? t("nav.close") : t("nav.menu")}
           onClick={() => setMenuOpen((v) => !v)}
         >
-          <span className={styles.menuToggleLabel}>
-            {menuOpen ? t("nav.close") : t("nav.menu")}
-          </span>
-          <span
-            className={`${styles.menuIcon} ${menuOpen ? styles.menuIconOpen : ""}`}
-            aria-hidden="true"
-          >
-            <span />
-            <span />
-          </span>
+          {menuOpen ? (
+            <svg
+              className={styles.closeIcon}
+              viewBox="0 0 32 32"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M8 8 L24 24 M24 8 L8 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+              />
+            </svg>
+          ) : (
+            <>
+              <span className={styles.menuToggleLabel}>{t("nav.menu")}</span>
+              <span className={styles.menuIcon} aria-hidden="true">
+                <span />
+                <span />
+              </span>
+            </>
+          )}
         </button>
       </div>
 
