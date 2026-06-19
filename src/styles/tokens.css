@@ -1,0 +1,60 @@
+:root {
+  /* ---- Palette: warm neutral, single clay accent (no dark mode) ---- */
+  --bg: #f7f4ef;
+  --bg-raise: #fffdf9;
+  --bg-sink: #efe9e0;
+  --ink: #1a1a18;
+  --ink-soft: #4a4843;
+  --ink-faint: #8b877e;
+  --clay: #b5512f;
+  --clay-deep: #8f3d22;
+  --line: #ddd6ca;
+  --line-strong: #c7bfb0;
+  --on-dark: #f4f0e8;
+  --on-dark-soft: #cfc8bb;
+
+  /* ---- Type families ---- */
+  --font-display: "Archivo Variable", "Archivo", system-ui, sans-serif;
+  --font-body: "Hanken Grotesk Variable", "Hanken Grotesk", system-ui, sans-serif;
+
+  /* Width axis (font-stretch) to push Archivo into an expanded, architectural
+     register. 125% is the family's max width. */
+  --display-stretch: 125%;
+  --display-stretch-soft: 112%;
+
+  /* ---- Fluid type scale (clamp: min, preferred, max) ---- */
+  --step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.92rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.13rem);
+  --step-1: clamp(1.2rem, 1.12rem + 0.4vw, 1.5rem);
+  --step-2: clamp(1.5rem, 1.35rem + 0.75vw, 2.1rem);
+  --step-3: clamp(1.95rem, 1.7rem + 1.25vw, 3rem);
+  --step-4: clamp(2.6rem, 2.1rem + 2.5vw, 4.5rem);
+  --step-5: clamp(3.3rem, 2.4rem + 4.5vw, 7rem);
+
+  /* ---- Spacing scale (8px base) ---- */
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: clamp(5rem, 3rem + 10vw, 11rem);
+
+  /* ---- Layout ---- */
+  --measure: 68ch;
+  --container: 76rem;
+  --container-wide: 88rem;
+  --gutter: clamp(1.25rem, 0.5rem + 3.5vw, 4rem);
+  --radius: 2px;
+  --radius-lg: 6px;
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur: 360ms;
+  --dur-slow: 700ms;
+
+  --header-h: 4.5rem;
+}
