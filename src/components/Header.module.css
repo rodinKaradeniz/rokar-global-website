@@ -143,14 +143,15 @@
   transform: translateY(-5.25px) rotate(-45deg);
 }
 
-/* ---- Mobile menu panel ---- */
+/* ---- Mobile menu panel: full-viewport ---- */
 .mobileMenu {
   position: fixed;
   inset: 0;
-  top: 0;
+  /* fill the visual viewport even with dynamic browser chrome */
+  height: 100dvh;
   background: var(--bg);
-  padding: calc(var(--header-h) + env(safe-area-inset-top, 0) + var(--space-lg))
-    var(--gutter) calc(var(--space-2xl) + env(safe-area-inset-bottom, 0));
+  padding: calc(var(--header-h) + env(safe-area-inset-top, 0) + var(--space-sm))
+    var(--gutter) calc(var(--space-sm) + env(safe-area-inset-bottom, 0));
   z-index: 90;
   opacity: 0;
   visibility: hidden;
@@ -165,9 +166,19 @@
   visibility: visible;
 }
 
-.mobileNav {
+/* Inner column fills the panel; the nav grows to push contact to the bottom */
+.mobileInner {
+  min-height: 100%;
   display: flex;
   flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.mobileNav {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-top: 1px solid var(--line);
 }
 
@@ -175,12 +186,13 @@
   display: flex;
   align-items: baseline;
   gap: var(--space-md);
-  padding: var(--space-md) 0;
+  padding: clamp(0.3rem, 0.7vh, 0.75rem) 0;
   border-bottom: 1px solid var(--line);
   font-family: var(--font-display);
   font-stretch: var(--display-stretch-soft);
   font-weight: 600;
-  font-size: var(--step-2);
+  font-size: clamp(1.35rem, 1.15rem + 1.2vw, 1.9rem);
+  letter-spacing: -0.02em;
   color: var(--ink);
   /* slide-in once the panel is open */
   opacity: 0;
@@ -204,6 +216,55 @@
   min-width: 2ch;
 }
 
+/* ---- Menu footer: motto + brief contact ---- */
+.mobileFoot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.mobileMotto {
+  font-family: var(--font-display);
+  font-stretch: var(--display-stretch-soft);
+  font-weight: 600;
+  font-size: var(--step-0);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink-soft);
+  max-width: 30ch;
+}
+
+.mobileContact {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+
+.mobileContactLink {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: 0.35rem 0;
+  min-height: 44px;
+  border-bottom: 1px solid var(--line);
+}
+
+.mobileContactLabel {
+  font-size: var(--step--1);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clay);
+}
+
+.mobileContactValue {
+  font-size: var(--step-0);
+  font-weight: 500;
+  color: var(--ink);
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
 /* ---- Breakpoint: desktop nav in, mobile toggle out ---- */
 @media (min-width: 64rem) {
   .desktopNav {
@@ -221,5 +282,13 @@
   .mobileLink {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* Very short viewports (small/old phones, landscape): drop the motto so the
+   nav links + contact still fit the screen without scrolling. */
+@media (max-height: 650px) {
+  .mobileMotto {
+    display: none;
   }
 }
