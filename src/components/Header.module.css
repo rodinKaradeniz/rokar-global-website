@@ -76,6 +76,23 @@
   transform: scaleX(1);
 }
 
+/* ---- Over-hero state: transparent header on the dark hero → light content ---- */
+.overHero .link {
+  color: var(--on-dark-soft);
+}
+
+.overHero .link:hover {
+  color: var(--on-dark);
+}
+
+.overHero .menuToggle {
+  color: var(--on-dark);
+}
+
+.overHero .menuIcon span {
+  background: var(--on-dark);
+}
+
 /* ---- Mobile toggle ---- */
 .menuToggle {
   display: inline-flex;

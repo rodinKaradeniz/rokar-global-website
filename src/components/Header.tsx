@@ -48,11 +48,24 @@ export default function Header() {
     if (!menuOpen) menuButtonRef.current?.blur();
   }, [menuOpen]);
 
+  // Over the dark hero (top of page, transparent header) the header content
+  // must be light; once scrolled onto the light body — or with the light mobile
+  // menu open — it switches to dark.
+  const onLightSurface = scrolled || menuOpen;
+
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
+    <header
+      className={[
+        styles.header,
+        scrolled ? styles.scrolled : "",
+        onLightSurface ? "" : styles.overHero,
+      ]
+        .filter(Boolean)
+        .join(" ")}
+    >
       <div className={`container-wide ${styles.bar}`}>
         <a href="#top" className={styles.brand} aria-label="Rokar Global — home">
-          <Logo variant="light" />
+          <Logo variant={onLightSurface ? "light" : "dark"} />
         </a>
 
         <nav className={styles.desktopNav} aria-label="Primary">
