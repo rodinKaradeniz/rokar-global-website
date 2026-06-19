@@ -81,18 +81,6 @@ export default function Contact() {
             <h3 className={styles.detailLabel}>{t("contact.warehouseLabel")}</h3>
             <p className={styles.detailValue}>{t("contact.warehouse")}</p>
           </div>
-
-          {/* Pending fields — clearly marked, not invented */}
-          <div className={styles.pending}>
-            <p>
-              <span className={styles.pendingLabel}>{t("contact.websiteLabel")}</span>
-              {t("contact.websiteValue")}
-            </p>
-            <p>
-              <span className={styles.pendingLabel}>{t("contact.socialLabel")}</span>
-              {t("contact.socialValue")}
-            </p>
-          </div>
         </Reveal>
       </div>
     </section>

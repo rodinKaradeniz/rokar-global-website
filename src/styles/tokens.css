@@ -17,10 +17,11 @@
   --font-display: "Archivo Variable", "Archivo", system-ui, sans-serif;
   --font-body: "Hanken Grotesk Variable", "Hanken Grotesk", system-ui, sans-serif;
 
-  /* Width axis (font-stretch) to push Archivo into an expanded, architectural
-     register. 125% is the family's max width. */
-  --display-stretch: 125%;
-  --display-stretch-soft: 112%;
+  /* Width axis (font-stretch) for Archivo's display register. Pulled back from
+     the 125% max so letterforms read taller and less flat while staying
+     architectural/expanded. */
+  --display-stretch: 112%;
+  --display-stretch-soft: 104%;
 
   /* ---- Fluid type scale (clamp: min, preferred, max) ---- */
   --step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.92rem);

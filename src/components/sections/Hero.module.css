@@ -70,19 +70,19 @@
   font-weight: 700;
   font-stretch: var(--display-stretch);
   font-size: var(--step-5);
-  line-height: 0.96;
-  letter-spacing: -0.02em;
+  line-height: 0.9;
+  letter-spacing: -0.035em;
   color: var(--on-dark);
 }
 
 .tagline {
   margin-top: var(--space-md);
-  max-width: 24ch;
+  max-width: 40ch;
   font-family: var(--font-display);
   font-weight: 600;
   font-stretch: var(--display-stretch-soft);
-  font-size: clamp(1.15rem, 1rem + 1vw, 1.75rem);
-  line-height: 1.2;
+  font-size: clamp(1.2rem, 1rem + 1.25vw, 1.9rem);
+  line-height: 1.18;
   color: var(--on-dark);
 }
 
