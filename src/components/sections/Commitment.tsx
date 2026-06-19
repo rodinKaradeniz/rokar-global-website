@@ -11,7 +11,7 @@ export default function Commitment() {
       className={`container-wide section ${styles.section}`}
       aria-labelledby="commitment-title"
     >
-      <Reveal className={styles.inner}>
+      <Reveal className={styles.grid}>
         <p className="eyebrow">{t("commitment.eyebrow")}</p>
         <p id="commitment-title" className={styles.statement}>
           {t("commitment.body")}

@@ -19,8 +19,8 @@
   font-weight: 700;
   font-stretch: var(--display-stretch);
   font-size: var(--step-4);
-  line-height: 1.02;
-  letter-spacing: -0.015em;
+  line-height: 0.94;
+  letter-spacing: -0.03em;
   max-width: 16ch;
 }
 

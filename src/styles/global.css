@@ -75,8 +75,8 @@ ol {
   font-family: var(--font-display);
   font-weight: 700;
   font-stretch: var(--display-stretch);
-  line-height: 1.02;
-  letter-spacing: -0.01em;
+  line-height: 0.96;
+  letter-spacing: -0.025em;
 }
 
 .eyebrow {
@@ -125,8 +125,8 @@ ol {
   font-weight: 700;
   font-stretch: var(--display-stretch);
   font-size: var(--step-3);
-  line-height: 1.04;
-  letter-spacing: -0.01em;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
   max-width: 20ch;
 }
 
