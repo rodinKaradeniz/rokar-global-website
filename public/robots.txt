@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Sitemap: TODO — add absolute sitemap URL once the production domain is known

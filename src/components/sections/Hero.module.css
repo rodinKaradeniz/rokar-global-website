@@ -1,0 +1,157 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  isolation: isolate;
+  /* clear the fixed header + notch */
+  padding-top: calc(var(--header-h) + env(safe-area-inset-top, 0));
+  padding-bottom: clamp(3rem, 2rem + 6vw, 7rem);
+  background: var(--ink);
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Darkening scrim: stronger at the bottom where the text sits, plus a gentle
+   left bias since the copy is left-aligned over a moving video. */
+.scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to right,
+      rgba(16, 15, 13, 0.5) 0%,
+      rgba(16, 15, 13, 0.12) 45%,
+      rgba(16, 15, 13, 0) 75%
+    ),
+    linear-gradient(
+      to top,
+      rgba(16, 15, 13, 0.86) 0%,
+      rgba(16, 15, 13, 0.55) 42%,
+      rgba(16, 15, 13, 0.3) 72%,
+      rgba(16, 15, 13, 0.45) 100%
+    );
+}
+
+.inner {
+  width: 100%;
+  color: var(--on-dark);
+  /* Robust legibility over any video frame */
+  text-shadow: 0 1px 32px rgba(0, 0, 0, 0.32), 0 1px 4px rgba(0, 0, 0, 0.28);
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-stretch: 100%;
+  font-size: var(--step--1);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clay);
+  /* lift off a dark video for legibility */
+  filter: brightness(1.35);
+  margin-bottom: var(--space-md);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-stretch: var(--display-stretch);
+  font-size: var(--step-5);
+  line-height: 0.96;
+  letter-spacing: -0.02em;
+  color: var(--on-dark);
+}
+
+.tagline {
+  margin-top: var(--space-md);
+  max-width: 24ch;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-stretch: var(--display-stretch-soft);
+  font-size: clamp(1.15rem, 1rem + 1vw, 1.75rem);
+  line-height: 1.2;
+  color: var(--on-dark);
+}
+
+.actions {
+  margin-top: var(--space-xl);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.95rem 1.6rem;
+  min-height: 48px;
+  background: var(--on-dark);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: var(--step-0);
+  border-radius: var(--radius);
+  transition:
+    background-color var(--dur) var(--ease-out),
+    color var(--dur) var(--ease-out),
+    transform var(--dur) var(--ease-out);
+}
+
+.cta:hover {
+  background: var(--clay);
+  color: var(--on-dark);
+}
+
+.ctaArrow {
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.cta:hover .ctaArrow {
+  transform: translateX(4px);
+}
+
+/* Scroll cue — desktop only */
+.scroll {
+  position: absolute;
+  right: var(--gutter);
+  bottom: clamp(3rem, 2rem + 6vw, 7rem);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--on-dark-soft);
+}
+
+.scrollLabel {
+  font-size: var(--step--1);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 3.5rem;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--on-dark-soft) 40%,
+    var(--on-dark-soft)
+  );
+}
+
+@media (min-width: 64rem) {
+  .scroll {
+    display: flex;
+  }
+}

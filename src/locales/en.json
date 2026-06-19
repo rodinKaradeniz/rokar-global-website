@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "brand": "Rokar Global"
+  },
+  "nav": {
+    "overview": "Overview",
+    "vision": "Vision & Mission",
+    "values": "Values",
+    "services": "Services",
+    "whyUs": "Why Us",
+    "clients": "Clients",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "hero": {
+    "eyebrow": "Real Estate — Dar es Salaam",
+    "title": "Rokar Global",
+    "tagline": "Building Value. Creating Opportunities. Delivering Excellence.",
+    "cta": "Explore our services",
+    "scroll": "Scroll"
+  },
+  "overview": {
+    "eyebrow": "Company Overview",
+    "title": "A professional real estate company built on trust and expertise.",
+    "body": [
+      "Rokar Global is a professional real estate company specializing in property sales, leasing, property management, real estate development, and investment advisory services. We are committed to delivering exceptional real estate solutions that meet the evolving needs of homeowners, investors, businesses, and communities.",
+      "Our company focuses on creating value through quality service, market expertise, integrity, and innovation. We strive to build lasting relationships with our clients by providing reliable, transparent, and efficient real estate services."
+    ]
+  },
+  "vision": {
+    "eyebrow": "Vision & Mission",
+    "visionTitle": "Vision",
+    "visionBody": "To be a leading and trusted real estate company recognized for excellence, innovation, and sustainable property solutions.",
+    "missionTitle": "Mission",
+    "missionBody": "To provide professional real estate services that help clients achieve their property ownership, investment, and development goals while maintaining the highest standards of integrity and customer satisfaction."
+  },
+  "values": {
+    "eyebrow": "Core Values",
+    "title": "The principles behind every transaction.",
+    "items": [
+      {
+        "name": "Integrity",
+        "description": "We conduct our business with honesty, transparency, and ethical practices."
+      },
+      {
+        "name": "Professionalism",
+        "description": "We deliver quality services through skilled expertise and industry best practices."
+      },
+      {
+        "name": "Customer Focus",
+        "description": "Our clients are at the center of everything we do."
+      },
+      {
+        "name": "Excellence",
+        "description": "We are committed to exceeding expectations and delivering outstanding results."
+      },
+      {
+        "name": "Innovation",
+        "description": "We embrace modern technologies and innovative solutions to improve service delivery."
+      },
+      {
+        "name": "Accountability",
+        "description": "We take responsibility for our actions and commitments."
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "Our Services",
+    "title": "Full-service real estate, end to end.",
+    "items": [
+      {
+        "name": "Property Sales",
+        "description": "We facilitate the buying and selling of residential, commercial, industrial, and investment properties."
+      },
+      {
+        "name": "Property Leasing and Rentals",
+        "description": "We assist landlords and tenants with leasing, rental management, and occupancy solutions."
+      },
+      {
+        "name": "Property Management",
+        "description": "We provide comprehensive property management services including:",
+        "points": [
+          "Rent collection",
+          "Tenant screening",
+          "Property maintenance",
+          "Financial reporting",
+          "Facility management"
+        ]
+      },
+      {
+        "name": "Real Estate Development",
+        "description": "We undertake and support property development projects including:",
+        "points": [
+          "Residential housing projects",
+          "Commercial buildings",
+          "Mixed-use developments",
+          "Land development projects"
+        ]
+      },
+      {
+        "name": "Land Acquisition and Sales",
+        "description": "We help clients identify, acquire, verify, and sell land for residential, agricultural, commercial, and industrial purposes."
+      },
+      {
+        "name": "Real Estate Consultancy",
+        "description": "We offer expert advice on:",
+        "points": [
+          "Property valuation",
+          "Market analysis",
+          "Investment opportunities",
+          "Development planning",
+          "Property documentation"
+        ]
+      }
+    ]
+  },
+  "whyUs": {
+    "eyebrow": "Why Choose Us",
+    "title": "Reasons clients trust Rokar Global.",
+    "items": [
+      "Professional and experienced team",
+      "Transparent and ethical business practices",
+      "Extensive market knowledge",
+      "Strong client support and communication",
+      "Customized property solutions",
+      "Commitment to quality and customer satisfaction"
+    ]
+  },
+  "clients": {
+    "eyebrow": "Target Clients",
+    "title": "Who we work with.",
+    "items": [
+      "Individual home buyers",
+      "Property investors",
+      "Corporate organizations",
+      "Developers and contractors",
+      "Government institutions",
+      "Local and international investors"
+    ]
+  },
+  "commitment": {
+    "eyebrow": "Our Commitment",
+    "body": "We are dedicated to helping our clients make informed real estate decisions while ensuring smooth, secure, and successful transactions. Through professionalism, trust, and innovation, we aim to become a preferred partner in the real estate industry."
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk about your property goals.",
+    "intro": "Reach us directly — we respond quickly across phone, WhatsApp, and email.",
+    "officeLabel": "Office",
+    "office": "Chole Road, Gate No: 99, Masaki, Dar es Salaam, Tanzania",
+    "warehouseLabel": "Warehouse",
+    "warehouse": "Nelson Mandela Road, Mabibo External, Dar es Salaam, Tanzania",
+    "callLabel": "Call",
+    "callNumber": "+255 752 777 708",
+    "whatsappLabel": "WhatsApp",
+    "whatsappNumber": "+255 772 733 303",
+    "emailLabel": "Email",
+    "email": "rokarglobal@gmail.com",
+    "websiteLabel": "Website",
+    "websiteValue": "TODO — website URL not yet provided",
+    "socialLabel": "Social",
+    "socialValue": "TODO — social media links not yet provided",
+    "mapCta": "View on map"
+  },
+  "footer": {
+    "tagline": "Building Value. Creating Opportunities. Delivering Excellence.",
+    "rightsPrefix": "©",
+    "rights": "Rokar Global. All rights reserved.",
+    "sections": "Sections"
+  }
+}
