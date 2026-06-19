@@ -1,52 +1,73 @@
 import { useTranslation } from "react-i18next";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { navItems } from "./navItems";
 
 /**
- * Checkpoint 1 specimen — proves tokens, fonts, and i18n are wired up.
- * The real page shell (Header/sections/Footer) lands in Checkpoint 2.
+ * Checkpoint 2 — real shell (Header + Footer) with placeholder section anchors
+ * so the anchored nav, sticky header, and smooth scroll work end to end.
+ * Hero + content sections replace these placeholders in Checkpoints 3–4.
  */
 export default function App() {
   const { t } = useTranslation();
 
   return (
-    <main className="container" style={{ paddingBlock: "var(--space-2xl)" }}>
-      <p className="eyebrow">Scaffold · Design tokens</p>
-      <h1 className="display" style={{ fontSize: "var(--step-5)", marginTop: "0.5rem" }}>
-        {t("hero.title")}
-      </h1>
-      <p
-        className="display"
-        style={{
-          fontSize: "var(--step-2)",
-          fontWeight: 600,
-          color: "var(--ink-soft)",
-          marginTop: "var(--space-md)",
-          maxWidth: "20ch",
-        }}
-      >
-        {t("hero.tagline")}
-      </p>
-      <p className="measure" style={{ marginTop: "var(--space-lg)", color: "var(--ink-soft)" }}>
-        {(t("overview.body", { returnObjects: true }) as string[])[0]}
-      </p>
+    <>
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
+      <Header />
 
-      <div style={{ display: "flex", gap: "var(--space-xs)", marginTop: "var(--space-xl)" }}>
-        {["--bg", "--bg-sink", "--ink", "--ink-soft", "--clay", "--clay-deep", "--line"].map(
-          (token) => (
-            <div key={token} style={{ textAlign: "center", fontSize: "0.7rem" }}>
-              <div
-                style={{
-                  width: "3.5rem",
-                  height: "3.5rem",
-                  background: `var(${token})`,
-                  border: "1px solid var(--line)",
-                  borderRadius: "var(--radius)",
-                }}
-              />
-              <code>{token}</code>
-            </div>
-          ),
-        )}
-      </div>
-    </main>
+      <main id="main">
+        {/* Hero placeholder */}
+        <section
+          id="top"
+          style={{
+            minHeight: "100svh",
+            display: "grid",
+            alignContent: "center",
+            paddingBlock: "var(--space-3xl)",
+          }}
+          className="container"
+        >
+          <p className="eyebrow">{t("hero.eyebrow")}</p>
+          <h1 className="display" style={{ fontSize: "var(--step-5)", marginTop: "0.5rem" }}>
+            {t("hero.title")}
+          </h1>
+          <p
+            className="display"
+            style={{
+              fontSize: "var(--step-2)",
+              fontWeight: 600,
+              color: "var(--ink-soft)",
+              marginTop: "var(--space-md)",
+              maxWidth: "24ch",
+            }}
+          >
+            {t("hero.tagline")}
+          </p>
+        </section>
+
+        {/* Section placeholders */}
+        {navItems.map((item) => (
+          <section
+            key={item.id}
+            id={item.id}
+            className="container section"
+            style={{ minHeight: "60svh", borderTop: "1px solid var(--line)" }}
+          >
+            <p className="eyebrow">{t(item.labelKey)}</p>
+            <h2 className="display" style={{ fontSize: "var(--step-3)", marginTop: "0.5rem" }}>
+              {t(item.labelKey)}
+            </h2>
+            <p style={{ color: "var(--ink-faint)", marginTop: "var(--space-sm)" }}>
+              Section content — coming in the next checkpoint.
+            </p>
+          </section>
+        ))}
+      </main>
+
+      <Footer />
+    </>
   );
 }
