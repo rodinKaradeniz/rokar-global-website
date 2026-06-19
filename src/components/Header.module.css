@@ -26,6 +26,10 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-md);
+  /* Sit above the full-screen mobile menu (z 90) so the logo + close X stay
+     visible and clickable while the menu is open. */
+  position: relative;
+  z-index: 95;
 }
 
 .brand {
@@ -136,11 +140,10 @@
   bottom: 0;
 }
 
-.menuIconOpen span:first-child {
-  transform: translateY(5.25px) rotate(45deg);
-}
-.menuIconOpen span:last-child {
-  transform: translateY(-5.25px) rotate(-45deg);
+/* Big, unambiguous close X shown while the menu is open */
+.closeIcon {
+  width: 30px;
+  height: 30px;
 }
 
 /* ---- Mobile menu panel: full-viewport ---- */
