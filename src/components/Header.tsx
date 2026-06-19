@@ -53,6 +53,16 @@ export default function Header() {
   // menu open — it switches to dark.
   const onLightSurface = scrolled || menuOpen;
 
+  // Brief contact info surfaced inside the full-screen mobile menu.
+  const callNumber = t("contact.callNumber");
+  const whatsappNumber = t("contact.whatsappNumber");
+  const email = t("contact.email");
+  const menuContacts = [
+    { label: t("contact.callLabel"), value: callNumber, href: `tel:${callNumber.replace(/[^\d+]/g, "")}`, external: false },
+    { label: t("contact.whatsappLabel"), value: whatsappNumber, href: `https://wa.me/${whatsappNumber.replace(/\D/g, "")}`, external: true },
+    { label: t("contact.emailLabel"), value: email, href: `mailto:${email}`, external: false },
+  ];
+
   return (
     <header
       className={[
@@ -97,28 +107,51 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Full-viewport mobile menu */}
       <div
         id="mobile-menu"
         className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ""}`}
         hidden={!menuOpen}
       >
-        <nav className={styles.mobileNav} aria-label="Primary mobile">
-          {navItems.map((item, i) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className={styles.mobileLink}
-              style={{ transitionDelay: menuOpen ? `${60 + i * 40}ms` : "0ms" }}
-              onClick={() => setMenuOpen(false)}
-            >
-              <span className={styles.mobileLinkIndex}>
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              {t(item.labelKey)}
-            </a>
-          ))}
-        </nav>
+        <div className={styles.mobileInner}>
+          <nav className={styles.mobileNav} aria-label="Primary mobile">
+            {navItems.map((item, i) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className={styles.mobileLink}
+                style={{ transitionDelay: menuOpen ? `${60 + i * 35}ms` : "0ms" }}
+                onClick={() => setMenuOpen(false)}
+              >
+                <span className={styles.mobileLinkIndex}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                {t(item.labelKey)}
+              </a>
+            ))}
+          </nav>
+
+          <div className={styles.mobileFoot}>
+            <p className={styles.mobileMotto}>{t("hero.tagline")}</p>
+            <ul className={styles.mobileContact}>
+              {menuContacts.map((c) => (
+                <li key={c.label}>
+                  <a
+                    className={styles.mobileContactLink}
+                    href={c.href}
+                    onClick={() => setMenuOpen(false)}
+                    {...(c.external
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                  >
+                    <span className={styles.mobileContactLabel}>{c.label}</span>
+                    <span className={styles.mobileContactValue}>{c.value}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </header>
   );
